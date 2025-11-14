@@ -15,5 +15,5 @@ const adminSidebarSchema = new mongoose.Schema({
   ],
 });
 
-const AdminSidebarModel = mongoose.model("AdminSidebar", adminSidebarSchema);
-module.exports = AdminSidebarModel;
+const adminSidebarModel = mongoose.model("AdminSidebar", adminSidebarSchema);
+module.exports = adminSidebarModel;

@@ -14,14 +14,13 @@ const adminSidebarRoute = require("./routes/adminSidebarRoute");
 const dashboardRoute = require("./routes/adminDashboardRoute");
 const featuredSection = require("./routes/featuredSectionRoute");
 const app = express();
-require("dotenv").config()
-
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
-app.get("/",(req,res)=>{
-  res.send("hello")
-})
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 
 app.use("/user", userRoute);
 app.use("/shows", addShowRoute);
@@ -32,7 +31,7 @@ app.use("/seat-booking", seatBookingRoute);
 app.use("/checkout", checkoutRoute);
 app.use("/payments", paynowRoute);
 app.use("/homepage", homepageRouter);
-app.use("/featuredSection",featuredSection );
+app.use("/featuredSection", featuredSection);
 app.use("/adminSidebar", adminSidebarRoute);
 app.use("/adminDashboard", dashboardRoute);
 app.listen(process.env.PORT, (error) => {

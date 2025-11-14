@@ -1,11 +1,10 @@
 const express = require("express");
-const AdminSidebarModel = require("../models/AdminSidebarModel");
-
+const adminSidebarModel = require("../models/adminSidebarModel");
 const adminSidebarRoute = express.Router();
 
 adminSidebarRoute.post("/add", async (req, res) => {
   try {
-    const adminData = await AdminSidebarModel.create(req.body);
+    const adminData = await adminSidebarModel.create(req.body);
     console.log(adminData, "adminData");
     return res.status(201).json({
       message: "added admin",
@@ -20,7 +19,7 @@ adminSidebarRoute.post("/add", async (req, res) => {
 
 adminSidebarRoute.get("/", async (req, res) => {
   try {
-    const sidebar = await AdminSidebarModel.findOne();
+    const sidebar = await adminSidebarModel.findOne();
     if (!sidebar) {
       return res.status(404).json({ message: "Sidebar data not found" });
     }
