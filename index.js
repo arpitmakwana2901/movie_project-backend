@@ -16,11 +16,6 @@ const dashboardRoute = require("./routes/adminDashboardRoute");
 const app = express();
 require("dotenv").config()
 
-// app.set("view engine","ejs")
-
-// app.get("/",(req,res)=>{
-//     res.render("home")
-// })
 
 app.use(cors());
 app.use(express.json());
