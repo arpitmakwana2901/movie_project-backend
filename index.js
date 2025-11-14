@@ -19,19 +19,22 @@ require("dotenv").config()
 
 app.use(cors());
 app.use(express.json());
+app.get("/",(req,res)=>{
+  res.send("hello")
+})
 
-app.use("/user", userRoute);
-app.use("/shows", addShowRoute);
-app.use("/buy-ticket", buyTicketRoute);
-app.use("/book-ticket", bookingRoute);
-app.use("/seat-layout", seatLayoutRoutes);
-app.use("/seat-booking", seatBookingRoute);
-app.use("/checkout", checkoutRoute);
-app.use("/payments", paynowRoute);
-app.use("/homepage", homepageRouter);
-app.use("/featuredSection", FeaturedSectionRoute);
-app.use("/adminSidebar", adminSidebarRoute);
-app.use("/adminDashboard", dashboardRoute);
+// app.use("/user", userRoute);
+// app.use("/shows", addShowRoute);
+// app.use("/buy-ticket", buyTicketRoute);
+// app.use("/book-ticket", bookingRoute);
+// app.use("/seat-layout", seatLayoutRoutes);
+// app.use("/seat-booking", seatBookingRoute);
+// app.use("/checkout", checkoutRoute);
+// app.use("/payments", paynowRoute);
+// app.use("/homepage", homepageRouter);
+// app.use("/featuredSection", FeaturedSectionRoute);
+// app.use("/adminSidebar", adminSidebarRoute);
+// app.use("/adminDashboard", dashboardRoute);
 app.listen(process.env.PORT, (error) => {
   if (error) {
     console.log("Server is not connected", error.message);
