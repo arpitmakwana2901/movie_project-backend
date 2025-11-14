@@ -9,9 +9,9 @@ const FeaturedSectionSchema = mongoose.Schema({
   backdrop_path: { type: String },
 });
 
-const FeaturedSection = mongoose.model(
+const featuredSection = mongoose.model(
   "FeaturedSection",
   FeaturedSectionSchema
 );
 
-module.exports = FeaturedSection;
+module.exports = featuredSection;

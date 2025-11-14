@@ -10,9 +10,9 @@ const bookingRoute = require("./routes/bookingRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
 const paynowRoute = require("./routes/paynowRoute");
 const homepageRouter = require("./routes/homepageRoute");
+const featuredSectionRoute = require("./routes/featuredSectionRoute");
 const adminSidebarRoute = require("./routes/adminSidebarRoute");
 const dashboardRoute = require("./routes/adminDashboardRoute");
-const featuredSection = require("./routes/featuredSectionRoute");
 const app = express();
 require("dotenv").config();
 
@@ -31,7 +31,7 @@ app.use("/seat-booking", seatBookingRoute);
 app.use("/checkout", checkoutRoute);
 app.use("/payments", paynowRoute);
 app.use("/homepage", homepageRouter);
-app.use("/featuredSection", featuredSection);
+app.use("/featuredSection", featuredSectionRoute);
 app.use("/adminSidebar", adminSidebarRoute);
 app.use("/adminDashboard", dashboardRoute);
 app.listen(process.env.PORT, (error) => {
