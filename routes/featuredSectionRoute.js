@@ -1,10 +1,10 @@
 const express = require("express");
-const FeaturedSection = require("../models/FeaturedSectionModel");
 const authenticate = require("../middlewere/auth");
+const FeaturedSection = require("../models/FeaturedSectionModel");
 
-const FeaturedSectionRoute = express.Router();
+const featuredSection = express.Router();
 
-FeaturedSectionRoute.post("/add", authenticate, async (req, res) => {
+featuredSection.post("/add", authenticate, async (req, res) => {
   console.log("hello", req.body);
   try {
     const data = await FeaturedSection.create(req.body);
@@ -21,7 +21,7 @@ FeaturedSectionRoute.post("/add", authenticate, async (req, res) => {
   }
 });
 
-FeaturedSectionRoute.get("/", async (req, res) => {
+featuredSection.get("/", async (req, res) => {
   try {
     const movies = await FeaturedSection.find();
     res.status(200).json(movies);
@@ -30,4 +30,4 @@ FeaturedSectionRoute.get("/", async (req, res) => {
   }
 });
 
-module.exports = FeaturedSectionRoute;
+module.exports = featuredSection;

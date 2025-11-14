@@ -10,9 +10,9 @@ const bookingRoute = require("./routes/bookingRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
 const paynowRoute = require("./routes/paynowRoute");
 const homepageRouter = require("./routes/homepageRoute");
-const FeaturedSectionRoute = require("./routes/FeaturedSectionRoute");
 const adminSidebarRoute = require("./routes/adminSidebarRoute");
 const dashboardRoute = require("./routes/adminDashboardRoute");
+const featuredSection = require("./routes/featuredSectionRoute");
 const app = express();
 require("dotenv").config()
 
@@ -23,18 +23,18 @@ app.get("/",(req,res)=>{
   res.send("hello")
 })
 
-// app.use("/user", userRoute);
-// app.use("/shows", addShowRoute);
-// app.use("/buy-ticket", buyTicketRoute);
-// app.use("/book-ticket", bookingRoute);
-// app.use("/seat-layout", seatLayoutRoutes);
-// app.use("/seat-booking", seatBookingRoute);
-// app.use("/checkout", checkoutRoute);
-// app.use("/payments", paynowRoute);
-// app.use("/homepage", homepageRouter);
-// app.use("/featuredSection", FeaturedSectionRoute);
-// app.use("/adminSidebar", adminSidebarRoute);
-// app.use("/adminDashboard", dashboardRoute);
+app.use("/user", userRoute);
+app.use("/shows", addShowRoute);
+app.use("/buy-ticket", buyTicketRoute);
+app.use("/book-ticket", bookingRoute);
+app.use("/seat-layout", seatLayoutRoutes);
+app.use("/seat-booking", seatBookingRoute);
+app.use("/checkout", checkoutRoute);
+app.use("/payments", paynowRoute);
+app.use("/homepage", homepageRouter);
+app.use("/featuredSection",featuredSection );
+app.use("/adminSidebar", adminSidebarRoute);
+app.use("/adminDashboard", dashboardRoute);
 app.listen(process.env.PORT, (error) => {
   if (error) {
     console.log("Server is not connected", error.message);
